@@ -1,0 +1,37 @@
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.flex-container > div {
+  color: white;
+  width: 300px;
+  margin: 10px;
+}
+
+.flex-container-interno {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  color: gray;
+}
+
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.social-button > button {
+  background-color: transparent;
+  border-width: 0px;
+}
+
+.social-button > button > img {
+  height: 90px;
+}
