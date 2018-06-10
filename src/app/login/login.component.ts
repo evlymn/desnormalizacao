@@ -10,7 +10,11 @@ export class LoginComponent implements OnInit {
   constructor(private auth: AuthenticationService) {}
 
   login(provider: string) {
-    console.log(provider);
+    if (provider === 'github') {
+      this.auth.signInWithGithubAuthProvider();
+    } else {
+      this.auth.signInWithGoogleAuthProvider();
+    }
   }
 
   ngOnInit() {}
