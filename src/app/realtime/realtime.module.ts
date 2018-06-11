@@ -7,6 +7,7 @@ import { MatNavigationModule } from 'src/material_modules/mat-navigation.module'
 import { MatLayoutModule } from 'src/material_modules/mat-layout.module';
 import { MatButtonsIndicatorsModule } from 'src/material_modules/mat-buttons-indicators.module';
 import { MatPopupsModalsModule } from 'src/material_modules/mat-popups-modals.module';
+import { CartaoModule } from './cartao/cartao.module';
 
 @NgModule({
   imports: [CommonModule,
@@ -16,6 +17,7 @@ import { MatPopupsModalsModule } from 'src/material_modules/mat-popups-modals.mo
     MatButtonsIndicatorsModule,
     MatPopupsModalsModule,
     FormsModule,
+    CartaoModule
 
   ],
   declarations: [RealtimeComponent],
