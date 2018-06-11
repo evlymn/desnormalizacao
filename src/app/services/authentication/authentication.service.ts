@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  constructor(private angularFireAuth: AngularFireAuth) {
+  constructor(private angularFireAuth: AngularFireAuth, private router: Router) {
     this.onAuthStateChanged();
   }
 
   private onAuthStateChanged() {
     this.angularFireAuth.auth.onAuthStateChanged(user => {
       if (user) {
-        console.log('logado', user);
+        this.router.navigate(['logout']);
       } else {
-        console.log('não logado');
+        this.router.navigate(['']);
       }
     });
   }
