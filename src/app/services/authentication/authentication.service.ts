@@ -6,8 +6,15 @@ import * as firebase from 'firebase/app';
   providedIn: 'root'
 })
 export class AuthenticationService {
-
-  constructor(private angularFireAuth: AngularFireAuth) {}
+  constructor(private angularFireAuth: AngularFireAuth) {
+    this.angularFireAuth.auth.onAuthStateChanged(user => {
+      if (user) {
+        console.log('logado', user);
+      } else {
+        console.log('não logado');
+      }
+    });
+  }
 
   signInWithGithubAuthProvider() {
     return this.angularFireAuth.auth.signInWithPopup(new firebase.auth.GithubAuthProvider());
