@@ -9,9 +9,10 @@ import { FirebaseConfig } from '../environments/firebase.config';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { RealtimeModule } from './realtime/realtime.module';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, LogoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
