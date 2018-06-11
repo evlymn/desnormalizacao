@@ -15,7 +15,6 @@ import { RealtimeModule } from './realtime/realtime.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppRoutingModule,
     AngularFireModule.initializeApp(FirebaseConfig),
     AngularFireAuthModule,
     RealtimeModule
