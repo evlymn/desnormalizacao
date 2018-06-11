@@ -39,3 +39,4 @@ testem.log
 Thumbs.db
 package-lock.json
 /functions/node_modules
+/src/environments/firebase.config.ts
