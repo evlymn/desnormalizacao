@@ -27,4 +27,8 @@ export class AuthenticationService {
   signInWithGoogleAuthProvider() {
     return this.angularFireAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
+
+  signOut() {
+    return this.angularFireAuth.auth.signOut();
+  }
 }
