@@ -7,6 +7,10 @@ import * as firebase from 'firebase/app';
 })
 export class AuthenticationService {
   constructor(private angularFireAuth: AngularFireAuth) {
+    this.onAuthStateChanged();
+  }
+
+  private onAuthStateChanged() {
     this.angularFireAuth.auth.onAuthStateChanged(user => {
       if (user) {
         console.log('logado', user);
