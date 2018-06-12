@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '@services/authentication/authentication.service';
+import { Provedor } from '../enums/provedor.enum';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,10 @@ import { AuthenticationService } from '@services/authentication/authentication.s
 export class LoginComponent implements OnInit {
   constructor(private auth: AuthenticationService) {}
 
-  login(provider: string) {
-    if (provider === 'github') {
+  provedor  = Provedor;
+
+  login(provedor: Provedor) {
+    if (provedor === Provedor.github) {
       this.auth.signInWithGithubAuthProvider();
     } else {
       this.auth.signInWithGoogleAuthProvider();
