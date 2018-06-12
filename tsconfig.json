@@ -4,7 +4,8 @@
     "baseUrl": "./",
     "paths": {
       "@material/*": ["./src/material_modules/*"],
-      "@services/*": ["./src/app/services/*"]
+      "@services/*": ["./src/app/services/*"],
+      "@enums/*" : ["./src/app/enums/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
