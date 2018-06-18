@@ -1,3 +1,4 @@
+import { CartaoService } from './services/cartao/cartao.service';
 import { UsuarioRealtimeService } from './services/usuario/usuario-realtime.service';
 import { AuthenticationService } from './services/authentication/authentication.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,6 +14,7 @@ import { RealtimeModule } from './realtime/realtime.module';
 import { LogoutComponent } from './logout/logout.component';
 import { UsuarioService } from './services/usuario/usuario.service';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { CartaoRealtimeService } from '@services/cartao/cartao-realtime.service';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, LogoutComponent],
@@ -24,7 +26,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AngularFireDatabaseModule,
     RealtimeModule
   ],
-  providers: [AuthenticationService, UsuarioRealtimeService, UsuarioService],
+  providers: [AuthenticationService, UsuarioRealtimeService, UsuarioService, CartaoRealtimeService, CartaoService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
