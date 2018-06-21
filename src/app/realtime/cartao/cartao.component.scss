@@ -1,0 +1,17 @@
+.container {
+  display: flex; /* or inline-flex */
+  justify-content: flex-start;
+
+}
+
+.cadastro{
+  min-width: 500px;
+  width: 500px;
+  margin: 25px;
+
+}
+
+.listagem{
+  width: 100%;
+  margin: 25px;
+}
