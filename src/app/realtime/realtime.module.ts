@@ -11,12 +11,7 @@ import { CartaoModule } from './cartao/cartao.module';
 
 @NgModule({
   imports: [CommonModule,
-    MatFormControlsModule,
-    MatNavigationModule,
-    MatLayoutModule,
-    MatButtonsIndicatorsModule,
-    MatPopupsModalsModule,
-    FormsModule,
+
     CartaoModule
 
   ],

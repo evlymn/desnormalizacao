@@ -14,7 +14,7 @@ export class AuthenticationService {
   private onAuthStateChanged() {
     this.angularFireAuth.auth.onAuthStateChanged(user => {
       if (user) {
-        this.router.navigate(['logout']);
+        this.router.navigate(['realtime']);
       } else {
         this.router.navigate(['']);
       }

@@ -15,6 +15,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { UsuarioService } from './services/usuario/usuario.service';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { CartaoRealtimeService } from '@services/cartao/cartao-realtime.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, LogoutComponent],
@@ -24,6 +25,7 @@ import { CartaoRealtimeService } from '@services/cartao/cartao-realtime.service'
     AngularFireModule.initializeApp(FirebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    BrowserAnimationsModule,
     RealtimeModule
   ],
   providers: [AuthenticationService, UsuarioRealtimeService, UsuarioService, CartaoRealtimeService, CartaoService],
