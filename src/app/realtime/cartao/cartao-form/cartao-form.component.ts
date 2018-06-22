@@ -14,6 +14,7 @@ export class CartaoFormComponent implements OnInit {
   gravarCartao() {
     console.log(this.cartaoService.cartao.id);
     if (this.cartaoService.cartao.id) {
+      this.cartaoService.cartao.status = 'atualizando';
       this.cartaoService.realtime.update(this.cartaoService.cartao).then(() => {
         this.snackBar.open('cartão atualizado', '', {
           duration: 3000
@@ -21,6 +22,7 @@ export class CartaoFormComponent implements OnInit {
         this.limparCartao();
       });
     } else {
+      this.cartaoService.cartao.status = 'criado';
       this.cartaoService.realtime.add(this.cartaoService.cartao).then(r => {
         this.openSnack('Cartão gravado');
       }, reason =>  this.openSnack('erro: ' + reason));

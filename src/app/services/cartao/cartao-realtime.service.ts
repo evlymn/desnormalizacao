@@ -34,7 +34,7 @@ export class CartaoRealtimeService {
 
   getBandeiraPaisesPeloNome(bandeira: string, pais: string, nome: string) {
     return this.realtime
-      .list<Cartao>(`desnormalizacoes/bandeiraPaises/${bandeira}/${pais}`, ref =>
+      .list<Cartao>(`desnormalizacoes/bandeira_paises/${bandeira}/${pais}`, ref =>
         ref.orderByChild('nome').startAt(nome)
       )
       .valueChanges();
@@ -42,7 +42,7 @@ export class CartaoRealtimeService {
 
   getBandeiraPaises(bandeira: string, pais: string) {
     console.log(`desnormalizacoes/${bandeira}/${pais}`);
-    return this.realtime.list<Cartao>(`desnormalizacoes/bandeiraPaises/${bandeira}/${pais}`).valueChanges();
+    return this.realtime.list<Cartao>(`desnormalizacoes/bandeira_paises/${bandeira}/${pais}`).valueChanges();
   }
 
   list() {

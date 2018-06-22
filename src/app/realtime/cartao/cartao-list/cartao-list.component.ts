@@ -34,6 +34,7 @@ export class CartaoListComponent implements OnInit {
   atualizar(cartao: Cartao) {
     this.cartaoService.cartao = cartao;
     this.cartaoService.cartaoBefore = JSON.parse(JSON.stringify(cartao));
+    console.log(cartao);
   }
 
   pesquisarBandeiraPais() {

@@ -8,5 +8,6 @@ export interface Cartao {
   cvv: string;
   limite: string;
   exp: string;
+  status: string;
 }
 

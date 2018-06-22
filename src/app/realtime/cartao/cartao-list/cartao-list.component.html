@@ -89,7 +89,7 @@
     <span [ngClass]="verificaCampo(cartao.id, cartao.pais, 'pais')"> {{cartao.pais}}</span>
     <br>
     <mat-card-footer>
-      <button [disabled]="cartao.id?false:true" mat-button (click)="atualizar(cartao)">Atualizar</button>
+      <button [disabled]="cartao.id?false:true" mat-button (click)="atualizar(cartao)">Editar</button>
       <button mat-button (click)="deletar(cartao.id)">Deletar</button>
     </mat-card-footer>
   </mat-card-content>
