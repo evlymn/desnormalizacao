@@ -11,4 +11,19 @@
   width: 50%;
 }
 
+.field-100-px{
+  width: 100px;
+}
+
+.field-50-px{
+  width: 50px;
+}
+
+
+.container {
+  display: flex; /* or inline-flex */
+  justify-content: flex-start;
+}
+
+mat-form-field { padding: 3px;}
 
