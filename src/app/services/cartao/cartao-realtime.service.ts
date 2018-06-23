@@ -33,16 +33,14 @@ export class CartaoRealtimeService {
   }
 
   getBandeiraPaisesPeloNome(bandeira: string, pais: string, nome: string) {
-    return this.realtime
-      .list<Cartao>(`desnormalizacoes/bandeira_paises/${bandeira}/${pais}`, ref =>
-        ref.orderByChild('nome').startAt(nome)
-      )
-      .valueChanges();
+    const pathBandeiraPais = `desnormalizacoes/bandeira_paises/${bandeira}/${pais}`.toLowerCase();
+    return this.realtime.list<Cartao>(pathBandeiraPais, ref => ref.orderByChild('nome').startAt(nome)).valueChanges();
   }
 
   getBandeiraPaises(bandeira: string, pais: string) {
+    const pathBandeiraPais = `desnormalizacoes/bandeira_paises/${bandeira}/${pais}`.toLowerCase();
     console.log(`desnormalizacoes/${bandeira}/${pais}`);
-    return this.realtime.list<Cartao>(`desnormalizacoes/bandeira_paises/${bandeira}/${pais}`).valueChanges();
+    return this.realtime.list<Cartao>(pathBandeiraPais).valueChanges();
   }
 
   list() {
