@@ -1,54 +1,54 @@
 <mat-card>
-  <!-- <h4></h4> -->
-  <mat-card-title>Cadastro</mat-card-title>
+    <!-- <h4></h4> -->
+    <mat-card-title>Cadastro</mat-card-title>
 
-  <form class="example-form" (submit)="gravarCartao()">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Nome" [(ngModel)]="cartaoService.cartao.nome" name="nome" value="">
-    </mat-form-field>
-    <div class="row">
-      <div class="col-9">
-        <mat-form-field class="example-full-width">
-          <input matInput [(ngModel)]="cartaoService.cartao.endereco" name="endereco" placeholder="Endereço" value="">
-        </mat-form-field>
+    <form class="example-form" (submit)="gravarCartao()">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nome" [(ngModel)]="cartaoService.cartao.nome" name="nome" value="">
+      </mat-form-field>
+      <div class="container">
+
+          <mat-form-field class="field-100-px">
+            <input matInput [(ngModel)]="cartaoService.cartao.pais" name="pais" placeholder="País" value="">
+          </mat-form-field>
+
+
+          <mat-form-field  class="example-full-width ">
+            <input matInput [(ngModel)]="cartaoService.cartao.endereco" name="endereco" placeholder="Endereço" value="">
+          </mat-form-field>
+
+
       </div>
-      <div class="col-3">
-        <mat-form-field class="example-full-width">
-          <input matInput [(ngModel)]="cartaoService.cartao.pais" name="pais" placeholder="País" value="">
-        </mat-form-field>
+
+      <div class="container">
+
+          <mat-form-field  class="field-100-px">
+            <input matInput [(ngModel)]="cartaoService.cartao.bandeira" name="bandeira" placeholder="Bandeira" value="">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput type="number" [(ngModel)]="cartaoService.cartao.numero" name="numero" placeholder="Número" value="">
+          </mat-form-field>
+
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-3">
-        <mat-form-field class="example-full-width">
-          <input matInput [(ngModel)]="cartaoService.cartao.bandeira" name="bandeira" placeholder="Bandeira" value="">
-        </mat-form-field>
+      <div class="container">
+
+          <mat-form-field class="field-100-px">
+            <input matInput type="number" [(ngModel)]="cartaoService.cartao.cvv" name="cvv" placeholder="CVV" value="">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput type="number" [(ngModel)]="cartaoService.cartao.limite" name="limite" placeholder="Limite" value="">
+          </mat-form-field>
+
       </div>
-      <div class="col-9">
-        <mat-form-field class="example-full-width">
-          <input matInput type="number" [(ngModel)]="cartaoService.cartao.numero" name="numero" placeholder="Número" value="">
-        </mat-form-field>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-3">
-        <mat-form-field class="example-full-width">
-          <input matInput type="number" [(ngModel)]="cartaoService.cartao.cvv" name="cvv" placeholder="CVV" value="">
-        </mat-form-field>
-      </div>
-      <div class="col-9">
-        <mat-form-field class="example-full-width">
-          <input matInput type="number" [(ngModel)]="cartaoService.cartao.limite" name="limite" placeholder="Limite" value="">
-        </mat-form-field>
-      </div>
-    </div>
 
 
 
-    <button mat-button>{{cartaoService.cartao.id?'Atualizar':'cadastrar'}}</button>
-    <a (click)="limparCartao()" *ngIf="cartaoService.cartao.id?true:false"  mat-button>Cancelar</a>
+      <button mat-button>{{cartaoService.cartao.id?'Atualizar':'cadastrar'}}</button>
+      <a (click)="limparCartao()" *ngIf="cartaoService.cartao.id?true:false" mat-button>Cancelar</a>
 
-  </form>
-</mat-card>
+    </form>
+  </mat-card>
+
