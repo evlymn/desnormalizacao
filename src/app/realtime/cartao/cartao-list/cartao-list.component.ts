@@ -3,7 +3,7 @@ import { CartaoService } from '@services/cartao/cartao.service';
  import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { Cartao } from 'src/app/interfaces/cartao';
+import { Cartao } from '@interfaces/cartao';
 
 @Component({
   selector: 'app-cartao-list',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { Cartao } from '../../interfaces/cartao';
 import * as firebase from 'firebase/app';
+import { Cartao } from '@interfaces/cartao';
 
 @Injectable()
 export class CartaoRealtimeService {

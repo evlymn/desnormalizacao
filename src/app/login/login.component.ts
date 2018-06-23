@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '@services/authentication/authentication.service';
-import { Provedor } from '../enums/provedor.enum';
-import { UsuarioService } from '../services/usuario/usuario.service';
+import { Provedor } from '@enums/provedor.enum';
+import { UsuarioService } from '@services/usuario/usuario.service';
 
 @Component({
   selector: 'app-login',
