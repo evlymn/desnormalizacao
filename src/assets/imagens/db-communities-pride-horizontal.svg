@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1601px" height="355px" viewBox="0 0 1601 355" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #2B3084;">
+<svg width="1611px" height="376px" viewBox="0 0 1611 376" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #2B3084;">
     <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
     <title>Artboard 3</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <filter x="-1.8%" y="-1.4%" width="103.5%" height="105.7%" filterUnits="objectBoundingBox" id="filter-1">
-            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+        <filter x="-4.7%" y="-7.1%" width="109.3%" height="114.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
             <feMerge>
                 <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
                 <feMergeNode in="SourceGraphic"></feMergeNode>
@@ -19,7 +19,7 @@
         </linearGradient>
     </defs>
     <g id="Artboard-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group-3" filter="url(#filter-1)" transform="translate(20.000000, 20.000000)">
+        <g id="Group-3" filter="url(#filter-1)" transform="translate(30.000000, 31.000000)">
             <g id="Group-2">
                 <path d="M158.447196,0 L458.0835,0 C474.412423,0 486.70114,19.7688053 480.430564,34.246586 L369.278075,280.985715 C361.676804,298.669248 339.77083,314.163717 327.533598,314.163717 L25.7601256,314.163717 C6.90689202,313.095133 -5.38182479,298.669248 2.34447711,280.985715 L110.291214,34.246586 C120.711096,6.41150442 141.548485,0 158.447196,0 Z" id="Rectangle-2" fill="url(#linearGradient-2)"></path>
                 <g id="Group" transform="translate(9.617257, 55.566372)" fill-rule="nonzero">
@@ -37,7 +37,7 @@
             </g>
         </g>
         <text id="communities" font-family="Amaranth-Bold, Amaranth" font-size="200" font-weight="bold" fill="#FFFFFF">
-            <tspan x="503.2" y="251">communities</tspan>
+            <tspan x="513.2" y="262">communities</tspan>
         </text>
     </g>
 </svg>

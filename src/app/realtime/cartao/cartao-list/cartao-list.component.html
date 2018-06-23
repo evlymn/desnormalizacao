@@ -6,50 +6,51 @@
 
   </mat-expansion-panel-header>
   <mat-accordion>
-      <mat-expansion-panel (opened)="limparObjetoPesquisa()">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-                Bandeira e pais
-              </mat-panel-title>
-
-          </mat-expansion-panel-header>
-
-          <form class="example-form" (submit)="pesquisarBandeiraPais()">
-            <mat-form-field class="example-full-width">
-              <input matInput name="bandeira" [(ngModel)]="pesquisa.bandeira" placeholder="Bandeira">
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width">
-              <input matInput name="pais" [(ngModel)]="pesquisa.pais" placeholder="País">
-            </mat-form-field>
-            <br>
-            <button mat-button>Pesquisar</button>
-            <button type="button" (click)="listar()" mat-button>limpar</button>
-
-          </form>
-        </mat-expansion-panel>
-      <mat-expansion-panel  (opened)="limparObjetoPesquisa()">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Nome
-            </mat-panel-title>
-
-          </mat-expansion-panel-header>
-
-          <form class="example-form" (submit)="pesquisarNome()">
-            <mat-form-field class="example-full-width">
-              <input matInput name="nome" [(ngModel)]="pesquisa.nome" placeholder="Nome">
-            </mat-form-field>
-            <br>
-            <button mat-button>Pesquisar</button>
-            <button type="button" (click)="listar()" mat-button>limpar</button>
-
-          </form>
-        </mat-expansion-panel>
-    <mat-expansion-panel  (opened)="limparObjetoPesquisa()">
+    <mat-expansion-panel (opened)="limparObjetoPesquisa()">
       <mat-expansion-panel-header>
         <mat-panel-title>
-            Bandeira, pais e nome
+          Nome
+        </mat-panel-title>
+
+      </mat-expansion-panel-header>
+
+      <form class="example-form" (submit)="pesquisarNome()">
+        <mat-form-field class="example-full-width">
+          <input matInput name="nome" [(ngModel)]="pesquisa.nome" placeholder="Nome">
+        </mat-form-field>
+        <br>
+        <button mat-button>Pesquisar</button>
+        <button type="button" (click)="listar()" mat-button>limpar</button>
+
+      </form>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="limparObjetoPesquisa()">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Bandeira e pais
+        </mat-panel-title>
+
+      </mat-expansion-panel-header>
+
+      <form class="example-form" (submit)="pesquisarBandeiraPais()">
+        <mat-form-field class="example-full-width">
+          <input matInput name="bandeira" [(ngModel)]="pesquisa.bandeira" placeholder="Bandeira">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput name="pais" [(ngModel)]="pesquisa.pais" placeholder="País">
+        </mat-form-field>
+        <br>
+        <button mat-button>Pesquisar</button>
+        <button type="button" (click)="listar()" mat-button>limpar</button>
+
+      </form>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="limparObjetoPesquisa()">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Bandeira, pais e nome
         </mat-panel-title>
       </mat-expansion-panel-header>
 
@@ -74,25 +75,25 @@
 </mat-expansion-panel>
 
 <div *ngFor="let cartao of cartoes | async">
-<mat-card>
-  <mat-card-title [ngClass]="verificaCampo(cartao.id, cartao.nome, 'nome')">{{cartao.nome}}</mat-card-title>
-  <mat-card-subtitle>
-    <span [ngClass]="verificaCampo(cartao.id, cartao.bandeira, 'bandeira')"> {{cartao.bandeira}}</span> -
-    <span [ngClass]="verificaCampo(cartao.id, cartao.numero, 'numero')"> {{cartao.numero}}</span> /
-    <span [ngClass]="verificaCampo(cartao.id, cartao.cvv, 'cvv')">{{cartao.cvv}}</span>
-  </mat-card-subtitle>
-  <mat-card-content>
-    Limite:
-    <span [ngClass]="verificaCampo(cartao.id, cartao.limite, 'limite')"> {{cartao.limite}}</span>
-    <br> Endereço:
-    <span [ngClass]="verificaCampo(cartao.id, cartao.endereco, 'endereco')">{{cartao.endereco}} </span> -
-    <span [ngClass]="verificaCampo(cartao.id, cartao.pais, 'pais')"> {{cartao.pais}}</span>
-    <br>
-    <mat-card-footer>
-      <button [disabled]="cartao.id?false:true" mat-button (click)="atualizar(cartao)">Editar</button>
-      <button mat-button (click)="deletar(cartao.id)">Deletar</button>
-    </mat-card-footer>
-  </mat-card-content>
-</mat-card>
+  <mat-card>
+    <mat-card-title [ngClass]="verificaCampo(cartao.id, cartao.nome, 'nome')">{{cartao.nome}}</mat-card-title>
+    <mat-card-subtitle>
+      <span [ngClass]="verificaCampo(cartao.id, cartao.bandeira, 'bandeira')"> {{cartao.bandeira}}</span> -
+      <span [ngClass]="verificaCampo(cartao.id, cartao.numero, 'numero')"> {{cartao.numero}}</span> /
+      <span [ngClass]="verificaCampo(cartao.id, cartao.cvv, 'cvv')">{{cartao.cvv}}</span>
+    </mat-card-subtitle>
+    <mat-card-content>
+      Limite:
+      <span [ngClass]="verificaCampo(cartao.id, cartao.limite, 'limite')"> {{cartao.limite}}</span>
+      <br> Endereço:
+      <span [ngClass]="verificaCampo(cartao.id, cartao.endereco, 'endereco')">{{cartao.endereco}} </span> -
+      <span [ngClass]="verificaCampo(cartao.id, cartao.pais, 'pais')"> {{cartao.pais}}</span>
+      <br>
+      <mat-card-footer>
+        <button [disabled]="cartao.id?false:true" mat-button (click)="atualizar(cartao)">Editar</button>
+        <button mat-button (click)="deletar(cartao.id)">Deletar</button>
+      </mat-card-footer>
+    </mat-card-content>
+  </mat-card>
 
 </div>
