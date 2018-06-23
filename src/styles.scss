@@ -1,5 +1,4 @@
-
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 html,
 body {
@@ -14,7 +13,11 @@ body {
   cursor: pointer;
 }
 
-h3{
+h3 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 10px;
+}
+
+mat-panel-title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
 }

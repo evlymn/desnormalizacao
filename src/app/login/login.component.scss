@@ -8,10 +8,14 @@
 
 .flex-container > div {
   color: white;
-  width: 300px;
+  width: 400px;
   margin: 10px;
+  text-align: center;
 }
 
+.flex-container > div > img {
+  width: 300px;
+}
 .flex-container-interno {
   display: flex;
   justify-content: center;

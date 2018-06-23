@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1601px" height="355px" viewBox="0 0 1601 355" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #2B3084;">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-1.8%" y="-1.4%" width="103.5%" height="105.7%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="50%" y1="48.0852601%" x2="50%" y2="58.3137645%" id="linearGradient-2">
+            <stop stop-color="#CB2025" offset="0%"></stop>
+            <stop stop-color="#63459B" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Artboard-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3" filter="url(#filter-1)" transform="translate(20.000000, 20.000000)">
+            <g id="Group-2">
+                <path d="M158.447196,0 L458.0835,0 C474.412423,0 486.70114,19.7688053 480.430564,34.246586 L369.278075,280.985715 C361.676804,298.669248 339.77083,314.163717 327.533598,314.163717 L25.7601256,314.163717 C6.90689202,313.095133 -5.38182479,298.669248 2.34447711,280.985715 L110.291214,34.246586 C120.711096,6.41150442 141.548485,0 158.447196,0 Z" id="Rectangle-2" fill="url(#linearGradient-2)"></path>
+                <g id="Group" transform="translate(9.617257, 55.566372)" fill-rule="nonzero">
+                    <polygon id="path22" fill="#2F67B2" points="366.524336 209.442478 0 209.442478 21.9059735 157.081858 390.567478 157.081858"></polygon>
+                    <polygon id="path24" fill="#34AF49" points="390.567478 157.081858 21.3716814 157.081858 44.409617 104.721239 414.610619 104.721239"></polygon>
+                    <polygon id="path26" fill="#F7C706" points="415.144912 104.721239 44.3462389 104.721239 67.3207965 52.3606195 438.119469 52.3606195"></polygon>
+                    <polygon id="path28" fill="#F26822" points="437.585177 52.3606195 67.8550885 52.3606195 91.3639381 0 462.162611 0"></polygon>
+                </g>
+            </g>
+            <g id="db" transform="translate(80.143805, 0.000000)" fill="#FFFFFF">
+                <g id="Group-2">
+                    <path d="M174.697761,0 L225.471113,0 L142.627424,193.238434 C128.492592,193.238434 109.251477,193.238434 84.9040788,193.238434 C-79.5017668,193.238434 26.1448763,62.455516 145.834276,65.1245552 C155.098517,46.2633452 164.719678,24.5551601 174.697761,0 Z M132.472391,95.0177936 C69.3639576,90.747331 25.0777385,183.096085 97.7351148,170.818505 C110.448763,145.729537 109.915194,148.398577 132.472391,95.0177936 Z" id="Combined-Shape"></path>
+                    <path d="M190.996714,101.423488 L242.206912,101.423488 C232.980631,121.708185 223.556532,144.128114 213.934615,168.683274 C382.568905,160.676157 264.650177,300 211.267417,300 C182.106055,300 146.543417,300 104.579505,300 L190.996714,101.423488 Z M203.799263,193.772242 C176.077739,255.69395 165.391615,279.715302 165.391615,279.715302 C251.844523,287.188612 264.650177,193.772242 203.799263,193.772242 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+        <text id="communities" font-family="Amaranth-Bold, Amaranth" font-size="200" font-weight="bold" fill="#FFFFFF">
+            <tspan x="503.2" y="251">communities</tspan>
+        </text>
+    </g>
+</svg>
