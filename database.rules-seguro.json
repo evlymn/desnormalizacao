@@ -1,0 +1,16 @@
+{
+  "rules": {
+    ".read": "auth !=null",
+    ".write": "auth !=null",
+    "cartoes": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid",
+        "$key": {
+          ".validate":
+            "newData.child('nome').exists() && newData.child('cvv').isNumber() && root.child('bandeiras').child(newData.child('bandeira').val()).exists()"
+        }
+      }
+    }
+  }
+}

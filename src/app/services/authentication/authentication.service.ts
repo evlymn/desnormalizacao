@@ -11,7 +11,7 @@ export class AuthenticationService {
   constructor(private angularFireAuth: AngularFireAuth, private router: Router) {
     this.onAuthStateChanged();
   }
-
+  modoSeguro = false;
   get authState(): Observable<firebase.User> {
     return this.angularFireAuth.authState;
   }
@@ -39,8 +39,7 @@ export class AuthenticationService {
   }
 
   linkUser(path: string) {
-    console.log('currentUser', this.angularFireAuth.auth.currentUser);
-    if (this.angularFireAuth.auth.currentUser) {
+    if (this.angularFireAuth.auth.currentUser && this.modoSeguro) {
       return `${path}/${this.angularFireAuth.auth.currentUser.uid}/`;
     } else {
       return path + '/';

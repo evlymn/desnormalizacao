@@ -13,7 +13,8 @@ export class CartaoRealtimeService {
   }
 
   add(cartao: Cartao): firebase.database.ThenableReference {
-    console.log( JSON.stringify( cartao));
+    console.log('path', JSON.stringify(cartao));
+
     return this.ref.push(cartao);
   }
 
