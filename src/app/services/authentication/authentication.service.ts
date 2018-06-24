@@ -32,4 +32,8 @@ export class AuthenticationService {
   signOut() {
     return this.angularFireAuth.auth.signOut();
   }
+
+  linkUser(path: string) {
+    return `${path}/${this.angularFireAuth.auth.currentUser.uid}/`;
+  }
 }
