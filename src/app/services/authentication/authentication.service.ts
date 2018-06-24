@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,10 @@ export class AuthenticationService {
     });
   }
 
+  get authState(): Observable<firebase.User> {
+    return this.angularFireAuth.authState;
+  }
+
   signInWithGithubAuthProvider() {
     return this.angularFireAuth.auth.signInWithPopup(new firebase.auth.GithubAuthProvider());
   }
@@ -34,6 +39,11 @@ export class AuthenticationService {
   }
 
   linkUser(path: string) {
-    return `${path}/${this.angularFireAuth.auth.currentUser.uid}/`;
+    console.log('currentUser', this.angularFireAuth.auth.currentUser);
+    if (this.angularFireAuth.auth.currentUser) {
+      return `${path}/${this.angularFireAuth.auth.currentUser.uid}/`;
+    } else {
+      return path + '/';
+    }
   }
 }

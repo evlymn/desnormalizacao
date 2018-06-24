@@ -2,24 +2,24 @@ import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
 admin.initializeApp(functions.config().firebase);
 const desnormalizacoesRef = admin.database().ref('desnormalizacoes');
-const cartoesPath = '/cartoes/{cartaoID}';
+const cartoesPath = '/cartoes/{uid}/{cartaoID}';
 
 export const cartoes = {
   onCreate: functions.database.ref(cartoesPath).onCreate((snapshot, context) => {
-    adicionarCamposDePesquisa(snapshot);
+    adicionarCamposDePesquisa(snapshot, context);
     return true;
   }),
   onUpdate: functions.database.ref(cartoesPath).onUpdate((snapshot, context) => {
-    atualizarDadosCartao(snapshot);
+    atualizarDadosCartao(snapshot, context);
     return true;
   }),
   onDelete: functions.database.ref(cartoesPath).onDelete((snapshot, context) => {
-    deletarDesnormalizacoes(snapshot).catch(err => console.error(err));
+    deletarDesnormalizacoes(snapshot, context).catch(err => console.error(err));
     return true;
   })
 };
 
-function adicionarCamposDePesquisa(snapshot: functions.database.DataSnapshot) {
+function adicionarCamposDePesquisa(snapshot: functions.database.DataSnapshot, context: functions.EventContext) {
   const bandeira = snapshot.val().bandeira;
   const pais = snapshot.val().pais;
   const key = snapshot.key;
@@ -32,14 +32,14 @@ function adicionarCamposDePesquisa(snapshot: functions.database.DataSnapshot) {
       () =>
         snapshot.ref
           .once('value', atualizado => {
-            gravarDesnormalizacoes(atualizado);
+            gravarDesnormalizacoes(atualizado, context.auth.uid);
           })
           .catch(err => console.error(err))
     )
     .catch(err => console.error(err));
 }
 
-function atualizarDadosCartao(snapshot: functions.Change<functions.database.DataSnapshot>) {
+function atualizarDadosCartao(snapshot: functions.Change<functions.database.DataSnapshot>, context: functions.EventContext) {
   const bandeiraBefore = snapshot.before.val().bandeira;
   const bandeiraAfter = snapshot.after.val().bandeira;
   const paisBefore = snapshot.before.val().pais;
@@ -48,7 +48,7 @@ function atualizarDadosCartao(snapshot: functions.Change<functions.database.Data
 
   if (status === 'atualizando') {
     if (bandeiraBefore !== bandeiraAfter || paisBefore !== paisAfter) {
-      deletarDesnormalizacoes(snapshot.before).catch(err => console.error(err));
+      deletarDesnormalizacoes(snapshot.before, context).catch(err => console.error(err));
     }
 
     const bandeiraPais = `${bandeiraAfter}_${paisAfter}`.toLowerCase();
@@ -62,13 +62,14 @@ function atualizarDadosCartao(snapshot: functions.Change<functions.database.Data
         data_atualizacao: Date.now().valueOf()
       })
       .then(() => {
-        gravarDesnormalizacoes(snapshot.after);
+        gravarDesnormalizacoes(snapshot.after, context.auth.uid);
       })
       .catch(err => console.error(err));
   }
 }
 
 function deletarDesnormalizacoes(snapshot: functions.database.DataSnapshot, context?: functions.EventContext) {
+  const uid = context.auth.uid;
   const cartao = snapshot.val();
   const bandeira = cartao.bandeira;
   const pais = cartao.pais;
@@ -77,12 +78,12 @@ function deletarDesnormalizacoes(snapshot: functions.database.DataSnapshot, cont
   const pathBandeiraPais = `bandeira_paises/${bandeira}/${pais}/`.toLowerCase() + key;
 
   return Promise.all([
-    desnormalizacoesRef.child(pathPaisBandeira).remove(),
-    desnormalizacoesRef.child(pathBandeiraPais).remove()
+    desnormalizacoesRef.child(uid).child(pathPaisBandeira).remove(),
+    desnormalizacoesRef.child(uid).child(pathBandeiraPais).remove()
   ]);
 }
 
-function gravarDesnormalizacoes(snapshot: admin.database.DataSnapshot) {
+function gravarDesnormalizacoes(snapshot: admin.database.DataSnapshot, uid: string) {
   const cartao: any = snapshot.val();
   const bandeira = cartao.bandeira;
   const pais = cartao.pais;
@@ -92,12 +93,12 @@ function gravarDesnormalizacoes(snapshot: admin.database.DataSnapshot) {
 
   cartao.status = null;
 
-  desnormalizacoesRef
+  desnormalizacoesRef.child(uid)
     .child(pathPaisBandeira)
     .set(cartao)
     .catch(err => console.error(err));
 
-  desnormalizacoesRef
+  desnormalizacoesRef.child(uid)
     .child(pathBandeiraPais)
     .set(cartao)
     .catch(err => console.error(err));
