@@ -1,4 +1,4 @@
-import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { AuthenticationService } from '@services/authentication/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { CartaoService } from '@services/cartao/cartao.service';
 import { MatSnackBar } from '@angular/material/snack-bar';

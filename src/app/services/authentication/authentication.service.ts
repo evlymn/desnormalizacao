@@ -12,6 +12,10 @@ export class AuthenticationService {
     this.onAuthStateChanged();
   }
 
+  get authState(): Observable<firebase.User> {
+    return this.angularFireAuth.authState;
+  }
+
   private onAuthStateChanged() {
     this.angularFireAuth.auth.onAuthStateChanged(user => {
       if (user) {
@@ -20,10 +24,6 @@ export class AuthenticationService {
         this.router.navigate(['']);
       }
     });
-  }
-
-  get authState(): Observable<firebase.User> {
-    return this.angularFireAuth.authState;
   }
 
   signInWithGithubAuthProvider() {
