@@ -13,7 +13,7 @@
     ]
   },
   "hosting": {
-    "public": "dist",
+    "public": "dist/desnormalizacao",
     "ignore": [
       "firebase.json",
       "**/.*",

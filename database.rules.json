@@ -1,11 +1,15 @@
 {
   "rules": {
-    ".read": true,
-    ".write": true,
+    ".read": "auth !=null",
+    ".write": "auth !=null",
     "cartoes": {
-      ".indexOn": "nome",
-      "$id": {
-        ".validate": "newData.child('nome').exists() && newData.child('cvv').isNumber() && root.child('bandeiras').child(newData.child('bandeira').val()).exists()"
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid",
+        "$key": {
+          ".validate":
+            "newData.child('nome').exists() && newData.child('cvv').isNumber() && root.child('bandeiras').child(newData.child('bandeira').val()).exists()"
+        }
       }
     }
   }

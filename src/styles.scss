@@ -6,15 +6,8 @@ body {
   padding: 0px;
   height: 100%;
   width: 100%;
-  background: rgba(255,255,255,1);
-  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 29%, rgba(223,220,223,1) 81%, rgba(214,210,214,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(29%, rgba(246,246,246,1)), color-stop(81%, rgba(223,220,223,1)), color-stop(100%, rgba(214,210,214,1)));
-  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 29%, rgba(223,220,223,1) 81%, rgba(214,210,214,1) 100%);
-  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 29%, rgba(223,220,223,1) 81%, rgba(214,210,214,1) 100%);
-  background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 29%, rgba(223,220,223,1) 81%, rgba(214,210,214,1) 100%);
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 29%, rgba(223,220,223,1) 81%, rgba(214,210,214,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d6d2d6', GradientType=0 );
-}
+background-color: whitesmoke;
+ }
 
 .hand {
   cursor: pointer;
