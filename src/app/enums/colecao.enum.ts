@@ -1,3 +1,5 @@
 export enum Colecao {
-  usuarios = 'usuarios'
+  usuarios = 'usuarios',
+  cartoes = 'cartoes',
+  desnormalizacoes = 'desnormalizacoes'
 }

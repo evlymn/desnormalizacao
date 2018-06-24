@@ -1,6 +1,7 @@
+import { AuthenticationService } from '@services/authentication/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { CartaoService } from '@services/cartao/cartao.service';
- import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Cartao } from '@interfaces/cartao';
@@ -14,12 +15,14 @@ export class CartaoListComponent implements OnInit {
   cartoes: Observable<Cartao[]>;
   pesquisa = {} as any;
 
-  constructor(public cartaoService: CartaoService, private snackBar: MatSnackBar) {
+  constructor(public cartaoService: CartaoService, private snackBar: MatSnackBar, private auth: AuthenticationService) {
     this.listar();
   }
 
   listar() {
-    this.cartoes = this.cartaoService.realtime.list();
+    this.auth.authState.subscribe(user => {
+      this.cartoes = this.cartaoService.realtime.list();
+    });
   }
 
   deletar(id: string) {

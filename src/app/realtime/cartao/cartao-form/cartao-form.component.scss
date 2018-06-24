@@ -1,29 +1,60 @@
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
-
-.example-full-width {
-  width: 100%;
-}
-.example-50-width {
-  width: 50%;
-}
-
-.field-100-px{
-  width: 100px;
-}
-
-.field-50-px{
-  width: 50px;
-}
 
 
-.container {
-  display: flex; /* or inline-flex */
-  justify-content: flex-start;
-}
 
-mat-form-field { padding: 3px;}
+  .example-form {
+    width: 100%;
+  }
+  .example-full-width {
+    width: 100%;
+  }
+
+  .example-50-width {
+    width: 100%;
+  }
+
+  .field-100-px {
+    width: 100%;
+  }
+
+  .field-50-px {
+    width: 100%;
+  }
+  .container {
+    display: flex; /* or inline-flex */
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+  }
+
+@media only screen and (min-width: 768px) {
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+
+  .example-50-width {
+    width: 50%;
+  }
+
+  .field-100-px{
+    width: 100px;
+  }
+
+  .field-50-px{
+    width: 50px;
+  }
+
+
+  .container {
+    display: flex; /* or inline-flex */
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  mat-form-field { padding: 3px;}
+
+
+}
 

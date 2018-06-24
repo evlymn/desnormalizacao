@@ -2,18 +2,29 @@
   display: flex; /* or inline-flex */
   justify-content: center;
   flex-wrap: wrap;
-
 }
 
-.cadastro{
-  min-width: 500px;
-  width: 500px;
-  margin: 25px;
-
+.cadastro {
+  min-width: 100%;
+  width: 100%;
+  margin: 7px;
 }
 
-.listagem{
-  min-width: 500px;
-  width: 500px;
-  margin: 25px;
+.listagem {
+  min-width: 100%;
+  width: 100%;
+  margin: 7px;
+}
+@media only screen and (min-width: 768px) {
+  .cadastro {
+    min-width: 500px;
+    width: 500px;
+    margin: 25px;
+  }
+
+  .listagem {
+    min-width: 500px;
+    width: 500px;
+    margin: 25px;
+  }
 }
