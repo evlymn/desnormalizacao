@@ -8,13 +8,13 @@
 
 .flex-container > div {
   color: white;
-  width: 400px;
+  width: 100%;
   margin: 10px;
   text-align: center;
 }
 
 .flex-container > div > img {
-  width: 250px;
+  width: 200px;
 }
 .flex-container-interno {
   display: flex;
@@ -37,7 +37,7 @@
 }
 
 .social-button > button > img {
-  height: 70px;
+  height: 60px;
 }
 
 body{
