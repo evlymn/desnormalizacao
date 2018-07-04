@@ -34,10 +34,25 @@ export class CartaoRealtimeService {
       .valueChanges();
   }
 
-  findNome(nome: string) {
-    return this.realtime
-      .list<Cartao>(this.auth.linkUser(Colecao.cartoes), ref => ref.orderByChild('nome').startAt(nome))
-      .valueChanges();
+  findByTipo(pesquisa: string, tipo: string) {
+    if (!pesquisa) {
+      return null;
+    }
+
+    const caminho = this.auth.linkUser(Colecao.cartoes);
+
+    let resultado: any;
+
+    if (tipo === 'Nome') {
+      resultado = this.realtime.list<Cartao>(caminho, ref => ref.orderByChild('nome').startAt(pesquisa)).valueChanges();
+    } else if (tipo === 'País') {
+      resultado = this.realtime.list<Cartao>(caminho, ref => ref.orderByChild('pais').startAt(pesquisa)).valueChanges();
+    } else {
+      resultado = this.realtime
+        .list<Cartao>(caminho, ref => ref.orderByChild('bandeira').startAt(pesquisa))
+        .valueChanges();
+    }
+    return resultado;
   }
 
   getBandeiraPaisesPeloNome(bandeira: string, pais: string, nome: string) {
@@ -56,7 +71,6 @@ export class CartaoRealtimeService {
   list() {
     console.log(this.auth.linkUser('cartoes'));
 
-      return this.realtime.list<Cartao>(this.auth.linkUser('cartoes')).valueChanges();
-
+    return this.realtime.list<Cartao>(this.auth.linkUser('cartoes')).valueChanges();
   }
 }

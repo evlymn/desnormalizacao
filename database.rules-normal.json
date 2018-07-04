@@ -3,9 +3,10 @@
     ".read": "auth !=null",
     ".write": "auth !=null",
     "cartoes": {
+      ".indexOn": ["nome", "bandeira", "pais"],
       "$key": {
         ".validate":
-          "newData.child('nome').exists() && newData.child('cvv').isNumber() && root.child('bandeiras').child(newData.child('bandeira').val()).exists()"
+          "newData.child('nome').exists() && newData.child('cvv').isNumber() && newData.child('cvv').val().length >2 && newData.child('cvv').val().length <4  && root.child('bandeiras').child(newData.child('bandeira').val()).exists()"
       }
     }
   }

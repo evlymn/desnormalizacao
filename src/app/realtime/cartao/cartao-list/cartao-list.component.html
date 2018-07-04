@@ -9,16 +9,22 @@
     <mat-expansion-panel (opened)="limparObjetoPesquisa()">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Nome
+          {{pesquisa.tipo}}
         </mat-panel-title>
 
       </mat-expansion-panel-header>
 
-      <form class="example-form" (submit)="pesquisarNome()">
+      <form class="example-form" (submit)="pesquisarNomeTipo()">
         <mat-form-field class="example-full-width">
-          <input matInput name="nome" [(ngModel)]="pesquisa.nome" placeholder="Nome">
+          <input matInput name="nome" [(ngModel)]="pesquisa.nome" [(placeholder)]="pesquisa.tipo">
         </mat-form-field>
         <br>
+        <mat-radio-group name="tipopesquisa" [(ngModel)]="pesquisa.tipo">
+          <mat-radio-button [checked]="true" value="Nome">Nome</mat-radio-button>
+          <mat-radio-button value="Bandeira">Bandeira</mat-radio-button>
+          <mat-radio-button value="País">Pais</mat-radio-button>
+        </mat-radio-group> <br>
+
         <button mat-button>Pesquisar</button>
         <button type="button" (click)="listar()" mat-button>limpar</button>
 
