@@ -42,3 +42,5 @@ package-lock.json
 /src/environments/firebase.config.ts
 functions/lib/index.js
 functions/lib/index.js.map
+functions/lib/modo-simples.js
+functions/lib/modo-simples.js.map
