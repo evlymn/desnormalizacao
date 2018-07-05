@@ -16,6 +16,8 @@ export class CartaoListComponent implements OnInit {
   pesquisa = {} as any;
 
   constructor(public cartaoService: CartaoService, private snackBar: MatSnackBar, private auth: AuthenticationService) {
+    this.pesquisa.tipo = 'Nome';
+    this.listar();
   }
 
   listar() {
@@ -40,7 +42,11 @@ export class CartaoListComponent implements OnInit {
   }
 
   pesquisarBandeiraPais() {
-    this.cartoes = this.cartaoService.realtime.getBandeiraPaises(this.pesquisa.bandeira, this.pesquisa.pais);
+    this.cartoes = this.cartaoService.realtime.getBandeiraPaises(
+      this.pesquisa.bandeira,
+      this.pesquisa.pais,
+      this.pesquisa.tipoDesnormalizacao
+    );
   }
 
   pesquisarNomeTipo() {
@@ -65,10 +71,8 @@ export class CartaoListComponent implements OnInit {
   limparObjetoPesquisa() {
     this.pesquisa = {} as any;
     this.pesquisa.tipo = 'Nome';
+    this.pesquisa.tipoDesnormalizacao = 'campo';
   }
 
-  ngOnInit() {
-    this.pesquisa.tipo = 'Nome';
-    this.listar();
-  }
+  ngOnInit() {}
 }

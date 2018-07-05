@@ -8,7 +8,7 @@
         ".write": "auth.uid == $uid",
         "$key": {
           ".validate":
-            "newData.child('nome').exists() && newData.child('cvv').isNumber() && root.child('bandeiras').child(newData.child('bandeira').val()).exists()"
+            "newData.child('nome').exists() && newData.child('cvv').isNumber() && newData.child('cvv').val() > 99 && newData.child('cvv').val() < 1000 && root.child('bandeiras').child(newData.child('bandeira').val()).exists()"
         }
       }
     }

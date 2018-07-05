@@ -47,6 +47,10 @@
           <input matInput name="pais" [(ngModel)]="pesquisa.pais" placeholder="País">
         </mat-form-field>
         <br>
+        <mat-radio-group name="tipoDesnormalizacao" [(ngModel)]="pesquisa.tipoDesnormalizacao">
+            <mat-radio-button [checked]="'true'"  value="campo">Campo</mat-radio-button>
+            <mat-radio-button value="lista">Lista</mat-radio-button>
+          </mat-radio-group> <br>
         <button mat-button>Pesquisar</button>
         <button type="button" (click)="listar()" mat-button>limpar</button>
 

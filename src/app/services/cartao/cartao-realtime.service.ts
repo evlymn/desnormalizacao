@@ -61,11 +61,17 @@ export class CartaoRealtimeService {
     return this.realtime.list<Cartao>(pathBandeiraPais, ref => ref.orderByChild('nome').startAt(nome)).valueChanges();
   }
 
-  getBandeiraPaises(bandeira: string, pais: string) {
-    const pathBandeiraPais =
-      this.auth.linkUser(Colecao.desnormalizacoes) + `bandeira_paises/${bandeira}/${pais}`.toLowerCase();
-    console.log(pathBandeiraPais);
-    return this.realtime.list<Cartao>(pathBandeiraPais).valueChanges();
+  getBandeiraPaises(bandeira: string, pais: string, tipo: string) {
+    if (tipo === 'lista') {
+      const pathBandeiraPais =
+        this.auth.linkUser(Colecao.desnormalizacoes) + `bandeira_paises/${bandeira}/${pais}`.toLowerCase();
+      return this.realtime.list<Cartao>(pathBandeiraPais).valueChanges();
+    } else {
+      const caminhoCartoes = this.auth.linkUser(Colecao.cartoes);
+      return this.realtime
+        .list<Cartao>(caminhoCartoes, ref => ref.orderByChild('bandeira_pais').startAt(`${bandeira}_${pais}`))
+        .valueChanges();
+    }
   }
 
   list() {
